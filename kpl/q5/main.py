@@ -10,10 +10,19 @@ class ScraperXRT:
 		self.pageResponse = requests.get(self.URL)
 		self.bsParser = BeautifulSoup(self.pageResponse.content, 'html.parser')
 		self.trElements = self.bsParser.find_all('tr')
+		self.aElements = self.bsParser.find_all('a')[5:]
 
 	def query(self):
-		print(self.trElements[3])
-		
+		# for aElem in self.aElements:
+		aElem = self.aElements[0]
+		tmp = aElem.text.split('_')
+		typ = tmp[1] + "_" + tmp[2]
+		date = tmp[3]
+		time = tmp[4].split('.')[0]
+		print(typ)
+		print(date)
+		print(time)
+
 
 	def get(self):
 		return NotImplementedError
@@ -23,3 +32,4 @@ class ScraperXRT:
 
 scraper = ScraperXRT('AI_mesh', datetime.now(), datetime.now())
 scraper.query()
+# print(datetime.now())
