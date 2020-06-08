@@ -16,7 +16,7 @@ R = 6357000
 # time dilation = sqrt(1- 2*G*M/r*c*c ) * T - Where T is the time taken for light to reach the satellite 
 
 def calcTime(dist):
-	return C * (R-dist)
+	return (R-dist)/C
 
 def findDelay(dist):
 	T = calcTime(dist)
