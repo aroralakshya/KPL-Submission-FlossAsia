@@ -1,1 +1,23 @@
 #add all dependencies here
+#for q1
+
+#for q2
+
+#for q3
+
+#for q4
+datetime
+astropy
+
+#for q5
+requests
+bs4
+datetime
+urllib
+os
+matplotlib
+astropy
+
+#for q6
+math
+astropy
