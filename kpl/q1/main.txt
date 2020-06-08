@@ -1,10 +1,8 @@
 # Write the name of astronomical objects within quotes shown below
 
-i) ""
-ii) ""
-iii) ""
-iv) ""
-v) ""
-vi) ""
-vii) "" & ""
-
+i) "Polaris"
+ii) "Regulus(alpha leonis)"
+iii) "Messier 29"
+iv) "Messier 92 "
+v) "Gamma Lyrae"
+vi) "M75" & "M55"
