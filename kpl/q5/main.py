@@ -49,6 +49,6 @@ class ScraperXRT:
 		plt.imshow(image_data,cmap='gray')
 		plt.colorbar()
 
-scraper = ScraperXRT('Ai_mesh', datetime(2014, 1, 10, 18, 14, 0), datetime(2015, 1, 16, 7, 14, 0))
-print(scraper.query())
+scraper = ScraperXRT('Al_mesh', datetime(2014, 1, 10, 18, 14, 0), datetime(2015, 1, 16, 7, 14, 0))
+scraper.query()
 scraper.get()
