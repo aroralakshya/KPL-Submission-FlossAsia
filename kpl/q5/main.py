@@ -34,20 +34,20 @@ class ScraperXRT:
              if(self.startime<=date<=self.endtime and typ==self.type_of_file):
                  self.query_results.append(aElem.text)
                  return self.query_results
-        
-    def get(self):
-        if not os.path.exists(self.save_dir):
+
+	def get(self):
+         if not os.path.exists(self.save_dir):
             os.mkdir(self.save_dir)
             for quer_res in self.query_results:
                 urllib.request.urlretrieve(self.URL + quer_res, self.save_dir + quer_res)
 
-    def view(self, filepath):
-        image_file = get_pkg_data_filename(filepath)
-        fits.info(image_file)
-        image_data = fits.getdata(image_file, ext=0)
-        plt.figure()
-        plt.imshow(image_data,cmap='gray')
-        plt.colorbar()
+	def view(self, filepath):
+         image_file = get_pkg_data_filename(filepath)
+         fits.info(image_file)
+         image_data = fits.getdata(image_file, ext=0)
+         plt.figure()
+         plt.imshow(image_data,cmap='gray')
+         plt.colorbar()
 
 scraper = ScraperXRT('Al_mesh', datetime(2014, 1, 10, 18, 14, 0), datetime(2015, 1, 16, 7, 14, 0))
 scraper.query()
