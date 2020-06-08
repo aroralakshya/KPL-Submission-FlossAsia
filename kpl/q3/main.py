@@ -6,7 +6,7 @@ Any extra lines of code (if required)
 as helper for this function.
 """
 
-R = 5.974e24
+M = 5.974e24
 
 C = 2.998e8
 
@@ -19,5 +19,7 @@ def calcTime(dist):
 	return (R-dist)/C
 
 def findDelay(dist):
-	T = calcTime(dist)
-	dT = math.sqrt(1- (2*G*M)/(R*C*C)) * T
+    T = calcTime(dist)
+    dT1 = math.sqrt(1- (2*G*M)/(R*C*C)) * T
+    dT2 = math.sqrt(1- (2*G*M)/(dist*C*C)) * T
+    return abs(dT1 - dT2)*10**9			#the nanoseconds gained by the satellite
