@@ -36,10 +36,14 @@ class ScraperXRT:
 		return self.query_results
 
 	def get(self):
+		qqq = []
 		if not os.path.exists(self.save_dir):
 			os.mkdir(self.save_dir)
-			for quer_res in self.query_results:
-				urllib.request.urlretrieve(self.URL + quer_res, self.save_dir + quer_res)
+		for quer_res in self.query_results:
+			qqq.append(self.save_dir + quer_res)
+			urllib.request.urlretrieve(self.URL + quer_res, self.save_dir + quer_res)
+		
+		return qqq
 
 	def view(self, filepath):
 		image_file = get_pkg_data_filename(filepath)
@@ -51,4 +55,4 @@ class ScraperXRT:
 
 scraper = ScraperXRT('AlpolyTipoly', datetime(2016, 1, 10, 18, 14, 0), datetime(2018, 1, 16, 7, 14, 0))
 print(scraper.query())
-scraper.get()
+print(scraper.get())
