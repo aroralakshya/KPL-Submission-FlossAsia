@@ -2,6 +2,7 @@
 #for q1
 
 #for q2
+astropy
 
 #for q3
 math
