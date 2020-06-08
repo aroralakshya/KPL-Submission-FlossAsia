@@ -23,3 +23,5 @@ def findDelay(dist):
     dT1 = math.sqrt(1- (2*G*M)/(R*C*C)) * T
     dT2 = math.sqrt(1- (2*G*M)/(dist*C*C)) * T
     return abs(dT1 - dT2)*10**9			#the nanoseconds gained by the satellite
+
+# print(findDelay(6387000))
