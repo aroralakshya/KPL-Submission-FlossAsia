@@ -10,7 +10,7 @@ as helper for this function.
 """
 
 def findstrike(velocity, alt, az):
-	V = [velocity*math.cos(math.pi/180*alt)*math.cos(math.pi/180*az),velocity*math.sin(math.pi/180*alt),v*math.cos(math.pi/180*alt)*math.sin(math.pi/180*az)]
+	V = [velocity*math.cos(math.pi/180*alt)*math.cos(math.pi/180*az),velocity*math.sin(math.pi/180*alt),velocity*math.cos(math.pi/180*alt)*math.sin(math.pi/180*az)]
 	#m/s #projectile velocity in three directions xyz
 
 	time = 2*V[1]/9.8  #(t=2Vy/g)
