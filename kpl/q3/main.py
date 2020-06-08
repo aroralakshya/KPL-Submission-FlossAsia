@@ -10,7 +10,7 @@ M = 5.974e24
 
 C = 2.998e8
 
-G = 6.674e−11
+G = 6.674*10**(−11)
 R = 6357000
 
 # time dilation = sqrt(1- 2*G*M/r*c*c ) * T - Where T is the time taken for light to reach the satellite 
