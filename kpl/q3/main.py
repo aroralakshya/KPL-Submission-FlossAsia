@@ -6,7 +6,7 @@ Any extra lines of code (if required)
 as helper for this function.
 """
 
-R = 5.974e24
+M = 5.974e24
 
 C = 2.998e8
 
@@ -16,8 +16,10 @@ R = 6357000
 # time dilation = sqrt(1- 2*G*M/r*c*c ) * T - Where T is the time taken for light to reach the satellite 
 
 def calcTime(dist):
-	return C * (R-dist)
+	return (R-dist)/C
 
 def findDelay(dist):
-	T = calcTime(dist)
-	dT = math.sqrt(1- (2*G*M)/(R*C*C)) * T
+    T = calcTime(dist)
+    dT1 = math.sqrt(1- (2*G*M)/(R*C*C)) * T
+    dT2 = math.sqrt(1- (2*G*M)/(dist*C*C)) * T
+    return (dT1 - dT2)*10**9			#the nanoseconds gained by the satellite
