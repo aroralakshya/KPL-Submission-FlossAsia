@@ -1,10 +1,15 @@
 # all imports below
-
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import urllib.request
 import os
+import matplotlib.pyplot as plt
+from astropy.visualization import astropy_mpl_style
+plt.style.use(astropy_mpl_style)
+from astropy.utils.data import get_pkg_data_filename
+from astropy.io import fits
+
 
 class ScraperXRT:
 	def __init__(self, typeof_file, startime, endtime):
@@ -50,7 +55,12 @@ class ScraperXRT:
 				urllib.request.urlretrieve	(self.URL + quer_res, self.save_dir + quer_res)
 
 	def view(self, filepath):
-		return NotImplementedError
+		image_file = get_pkg_data_filename(filepath)
+		fits.info(image_file)
+		image_data = fits.getdata(image_file, ext=0)
+		plt.figure()
+		plt.imshow(image_data,cmap='gray')
+plt.colorbar()
 
 scraper = ScraperXRT('AI_mesh', datetime(2014, 1, 10, 18, 14, 0), datetime(2014, 1, 16, 7, 14, 0))
 print(scraper.query())
